@@ -1,0 +1,43 @@
+# --- OS・エディタの不要ファイル ---
+.DS_Store
+Thumbs.db
+.vscode/
+.idea/
+
+# =========================
+# Backend (Python) の設定
+# =========================
+# ★一番重要: APIキーが入ったファイル
+backend/.env
+
+# Pythonのキャッシュ（自動生成されるゴミ）
+**/__pycache__/
+*.pyc
+
+# 仮想環境（もし作成していたら）
+backend/venv/
+backend/.venv/
+backend/env/
+
+# =========================
+# Frontend (Node.js) の設定
+# =========================
+# ★一番重要: 重たすぎるライブラリフォルダ
+frontend/node_modules/
+
+# ビルド後のファイル
+frontend/dist/
+
+# エラーログ
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+
+# =========================
+# 素材・モデルデータの設定
+# =========================
+# publicフォルダ内の .vrm ファイル（モデル）を無視
+frontend/public/*.vrm
+
+# もし models というフォルダに入れているならフォルダごと無視
+frontend/public/models/

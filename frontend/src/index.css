@@ -1,0 +1,95 @@
+:root {
+  font-family: Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
+  line-height: 1.5;
+  font-weight: 400;
+  color-scheme: dark; /* 夜間っぽくダークモード */
+  background-color: #242424;
+  color: rgba(255, 255, 255, 0.87);
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  overflow: hidden; /* スクロールさせない */
+  width: 100vw;
+  height: 100vh;
+}
+
+/* 3Dキャンバスを全画面背景に配置 */
+.vrm-canvas {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 1;
+}
+
+/* UIレイヤー */
+.ui-layer {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 10;
+  pointer-events: none; /* UI以外の場所はクリック透過して3D操作できるように */
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+/* 操作パネル系はクリック有効に */
+.ui-panel {
+  pointer-events: auto;
+  background: rgba(0, 0, 0, 0.6);
+  padding: 1rem;
+  margin: 1rem;
+  border-radius: 8px;
+}
+
+.chat-history {
+  flex-grow: 1;
+  overflow-y: auto;
+  margin: 1rem;
+  mask-image: linear-gradient(to bottom, transparent, black 10%, black 90%, transparent);
+}
+
+.message {
+  padding: 4px 8px;
+  margin-bottom: 4px;
+  background: rgba(0,0,0,0.3);
+  border-radius: 4px;
+}
+
+.controls {
+  display: flex;
+  gap: 10px;
+  align-items: center;
+}
+
+button {
+  cursor: pointer;
+  padding: 8px 16px;
+  background-color: #646cff;
+  border: none;
+  border-radius: 4px;
+  color: white;
+  font-weight: bold;
+}
+button:disabled {
+  background-color: #555;
+  cursor: not-allowed;
+}
+
+/* 音声認識中などのステータス表示 */
+.status-indicator {
+  color: #00ff00;
+  font-weight: bold;
+  font-size: 0.8rem;
+}
+
+/* 隠し要素 */
+.hidden {
+  display: none;
+}
