@@ -1,0 +1,2 @@
+# OCVtuberAssistant
+オリキャラをVtuberにして話し相手にできるもの
