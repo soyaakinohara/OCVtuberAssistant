@@ -9,10 +9,11 @@ export default defineConfig({
     basicSsl() // 追加：これで自動的にhttpsになります
   ],
   server: {
-    host: '0.0.0.0',  // 追加：外部アクセスを許可(0.0.0.0相当)
+    host: 'true',  // 追加：外部アクセスを許可(0.0.0.0相当)
+    port: '3000',
     proxy: {
       '/api': {
-        target: 'http://localhost:8000', // バックエンドへ転送
+        target: 'http://localhost:8888', // バックエンドへ転送
         changeOrigin: true,
         secure: false, // バックエンドはhttpなのでsecureチェックしない
       }
